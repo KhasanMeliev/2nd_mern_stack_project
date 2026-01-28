@@ -1,16 +1,16 @@
 import express from "express";
 import {
-  addProduct,
-  deleteProduct,
   getAllProducts,
+  createProduct,
+  deleteProduct,
   updateProduct,
-} from "../controllers/productController.js";
+} from "../controllers/product.controller.js";
 
 const router = express.Router();
 
 router.get("/", getAllProducts);
 
-router.post("/", addProduct);
+router.post("/", createProduct);
 
 router.put("/:id", updateProduct);
 

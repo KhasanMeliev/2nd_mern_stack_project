@@ -1,10 +1,10 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
-import router from "./router/productRouter.js";
+import productRoutes from "./router/product.route.js";
 const app = express();
 
 app.use(express.json());
-app.use('/api/products/',router);
+app.use("/api/products/", productRoutes);
 
 app.listen(5000, () => {
   connectDB();

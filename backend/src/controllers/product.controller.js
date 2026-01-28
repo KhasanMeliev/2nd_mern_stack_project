@@ -10,8 +10,12 @@ export const getAllProducts = async (req, res) => {
   }
 };
 
-export const addProduct = async (req, res) => {
+export const createProduct = async (req, res) => {
   const product = req.body;
+
+  if (!product.name || !product.price || !product.image) {
+    return res.status(400).json({ message: "All fields are required" });
+  } 
 
   const newProduct = new Product(product);
 
